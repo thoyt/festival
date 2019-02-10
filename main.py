@@ -9,7 +9,6 @@ with open(infile_name, 'wb') as f:
     subprocess.call([
         'docker','run',
         '-v', '{}:/deploy'.format(cwd),
-#        '-v', '{}/voices:/usr/share/festival/voices/english/'.format(cwd),
         '--rm',
         'festival',
         '/usr/bin/text2wave',
