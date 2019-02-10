@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE SINGING PUBLIC "-//SINGING//DTD SINGING mark up//EN" 
+"Singing.v0_1.dtd"
+[]>
+<SINGING BPM="{{ bpm }}">
+  {% for note in notes %}
+    {% if note.word %}
+      <DURATION BEATS="{{ note.beats }}">
+        <PITCH NOTE="{{ note.pitch }}">{{ note.word }}</PITCH>
+      </DURATION>
+    {% else %}
+      <REST BEATS="{{ note.beats }}"></REST>
+    {% endif %}
+
+  {% endfor %}
+</SINGING>
